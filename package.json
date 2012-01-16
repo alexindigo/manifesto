@@ -1,0 +1,12 @@
+{
+  "name": "manifesto",
+  "description": "Parses cache.manifest and keeps an eye on the cached files to provide it with correct version",
+  "version": "0.0.1",
+  "author": "Alex Indigo <iam@alexindigo.com>",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/alexindigo/manifesto"
+  },
+  "main": "./manifesto.js"
+}
