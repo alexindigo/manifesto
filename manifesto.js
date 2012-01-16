@@ -28,7 +28,6 @@ exports.fetch = function(manifest, docroot, callback)
         return callback(err);
       }
 
-console.dir(['watch', cache]);
       callback(null, getManifest(manifest));
     });
 
@@ -42,7 +41,6 @@ console.dir(['watch', cache]);
 // subroutines
 function getManifest(manifest)
 {
-console.dir(['getManifest', cache[manifest]]);
   return cache[manifest].manifest.replace('#v%%version%%', '#v'+cache[manifest].version);
 }
 
