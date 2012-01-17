@@ -8,7 +8,7 @@ When you call it first time it check mtime for each of listed files in your mani
 and starts to watch them. After that it serve your manifest file from memory, and adjusts
 version number to the lastest mtime among listed files.
 
-You can find browser-ready example in [test.js](http://github.com/alexindigo/manifesto/test.js)
+You can find browser-ready example in [test.js](https://github.com/alexindigo/manifesto/blob/master/test.js)
 
 ``` js
 var http = require('http')
@@ -37,7 +37,7 @@ http.createServer(function (req, res) {
 }).listen(1337, "127.0.0.1");
 ```
 
-If you make request to [manifest.appcache](http://github.com/alexindigo/manifesto/manifest.appcache):
+If you make request to [manifest.appcache](https://github.com/alexindigo/manifesto/blob/master/manifest.appcache):
 
 ``` bash
 $ curl http://localhost:1337/manifest.appcache
@@ -79,6 +79,6 @@ Author: [Alex Indigo](http://github.com/alexindigo/)
 
 ## License
 
-[MIT](http://github.com/alexindigo/manifesto/LICENSE)
+[MIT](https://github.com/alexindigo/manifesto/blob/master/LICENSE)
 
 [0]: http://github.com/alexindigo/manifesto
