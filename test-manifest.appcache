@@ -1,0 +1,12 @@
+CACHE MANIFEST
+#v%%version%%
+
+CACHE:
+
+# keep reference to the manifest index file
+/test-index.html
+
+/LICENSE
+
+NETWORK:
+*

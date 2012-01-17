@@ -41,7 +41,7 @@ exports.fetch = function(manifest, docroot, callback)
 // subroutines
 function getManifest(manifest)
 {
-  return cache[manifest].manifest.replace('#v%%version%%', '#v'+cache[manifest].version);
+  return cache[manifest].manifest.replace('%%version%%', cache[manifest].version);
 }
 
 // strip cacheable items from the manifest file
@@ -53,6 +53,8 @@ function parseManifest(manifest, docroot, callback)
     // get manifest file data
     fs.readFile(manifest, 'ascii', function(err, data)
     {
+      var counter = 0;
+
       if (err)
       {
         // to prevent sudden continuation
@@ -76,12 +78,6 @@ function parseManifest(manifest, docroot, callback)
 
         // empty lines
         if (line.substr(0, 1) == '') return;
-
-        // check for version placeholder
-        if (match = /^#\s*version\s*$/.exec(line))
-        {
-          cache[manifest].manifest = cache[manifest].manifest.replace(match[0], '#v%%version%%');
-        }
 
         // skip comments
         if (line.substr(0, 1) == '#') return;
@@ -111,17 +107,29 @@ function parseManifest(manifest, docroot, callback)
         {
           addWatcher(docroot+line, watcher(manifest), function(added, mtime)
           {
-            if (!added) return;
+            // undo counter
+            counter--;
+
+            if (!added)
+            {
+              // check if everything is done
+              if (counter == 0) callback();
+              return;
+            }
 
             if (mtime > cache[manifest].version) cache[manifest].version = mtime;
 
             cache[manifest].files.push(line);
+
+            // check if everything is done
+            if (counter == 0) callback();
           });
+
+          // track inception
+          counter++;
         }
 
       });
-
-      callback();
     });
 }
 

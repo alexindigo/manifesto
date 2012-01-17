@@ -1,7 +1,7 @@
 {
   "name": "manifesto",
-  "description": "Parses cache.manifest and keeps an eye on the cached files to provide it with correct version",
-  "version": "0.0.1",
+  "description": "Automatically updates cache.manifest version number",
+  "version": "0.0.2",
   "author": "Alex Indigo <iam@alexindigo.com>",
   "repository":
   {
