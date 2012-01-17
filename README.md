@@ -37,7 +37,7 @@ http.createServer(function (req, res) {
 }).listen(1337, "127.0.0.1");
 ```
 
-If you make request to [manifest.appcache](https://github.com/alexindigo/manifesto/blob/master/manifest.appcache):
+If you make request to [manifest.appcache](https://github.com/alexindigo/manifesto/blob/master/test-manifest.appcache):
 
 ``` bash
 $ curl http://localhost:1337/manifest.appcache
