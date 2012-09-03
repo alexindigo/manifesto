@@ -3,6 +3,9 @@
   "description": "Automatically updates cache.manifest version number",
   "version": "0.0.4",
   "author": "Alex Indigo <iam@alexindigo.com>",
+  "engines": {
+    "node": ">= 0.6"
+  },
   "repository":
   {
     "type": "git",
